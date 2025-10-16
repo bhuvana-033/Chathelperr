@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChatHelper — AI Q&A Assistant (Demo)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app" role="application" aria-label="ChatHelper AI Q&A Assistant demo">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>ChatHelper</h1>
+        <div class="tagline">Instant AI Q&A Assistant — demo build</div>
+      </div>
+
+      <div class="controls">
+        <select id="filterTopic" aria-label="Filter topic">
+          <option value="all">Filter: All topics</option>
+          <option value="general">General</option>
+          <option value="programming">Programming</option>
+          <option value="science">Science</option>
+          <option value="career">Career</option>
+        </select>
+        <button id="clearHistory" class="small">Clear</button>
+      </div>
+
+      <div class="history" id="historyList" aria-live="polite"></div>
+
+      <div class="bottom-actions">
+        <button id="downloadAll" class="small">Download .txt</button>
+        <button id="exportJson" class="small">Export JSON</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="chat-area" id="chatArea">
+        <div class="tip">Tip: This demo uses a local mock AI. For real AI, wire a backend that calls OpenAI (never put API keys in frontend).</div>
+      </div>
+
+      <form id="askForm" class="input-area" onsubmit="return false;">
+        <input id="queryInput" placeholder="Ask me anything..." autocomplete="off" />
+        <button id="askBtn" class="btn" type="button">Ask</button>
+        <button id="askAIbtn" class="small" type="button" title="Use mock AI">Mock AI</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
